@@ -1,10 +1,7 @@
-!!! code and schematics coming soon, just need to clean it up to be a bit more publically readable !!!
+# !!! code and schematics coming soon, just need to clean it up to be a bit more publically readable !!!
 
-# Pet Rock
-
-Pet Rock is a eurorack synthesizer module, which generates 1 new rhythm every 24 hours. Rhythm generation is influenced by the current real phase of the moon. Additionally, at the start of every complete moon cycle the overall rhythm generation algorithm changes, between 4 different algorithms. It is the slowest self changing piece of music technology ever created (to my knowledge, please discredit me on this - if something slower exists I will be very happy and have a million questions) 
-
-Pet Rock is sold at cost of production (no profit) 
+## Pet Rock technical details 
+(this doc is a work in progress, just threw together the most commonly asked questions, and some fun lessons I learned, will continue updating)
 
 contact me at jsenzel1@gmail.com with any inquiries 
 
