@@ -1,4 +1,4 @@
-# !!! code and schematics coming soon, just need to clean it up to be a bit more publically readable !!!
+# *!!! Open Source code and schematics coming soon, just need to clean it up to be a bit more publically readable !!!*
 
 ## Pet Rock technical details 
 (this doc is a work in progress, just threw together the most commonly asked questions, and some fun lessons I learned, will continue updating)
