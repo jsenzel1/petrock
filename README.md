@@ -9,15 +9,15 @@ contact me at jsenzel1@gmail.com with any inquiries
 
 ## *How does it keep track of real time?* 
 
-Pet Rock keeeps track of real time with a small real time clock, powered by a battery - similar to a wristwatch without a screeen. I use the pcf8523 because it is cheap, and I'm not that concerened with accuracy (I generally need to tell what day it is, drifting by minutes isn't a big deal) This component is always on, even when everything is powered off. It keeps track of the date and time. I designed the circuit around the adafruit breakout board for the pcf8523 
+Pet Rock keeps track of real time with a small real time clock, powered by a battery - similar to a wristwatch without a screen. I use the pcf8523 because it is cheap, and I'm not that concerened with accuracy (I generally need to tell what day it is, drifting by minutes isn't a big deal) This component is always on, even when everything is powered off. It keeps track of the date and time. I designed the circuit around the adafruit breakout board for the pcf8523 
 
 ## *How does it keep track of the moon phase?* 
 
 I had initially implemented some not so complex moon phase tracking formulas into the code (you can calculate the rough moon phase with simple math if you have the date) but I found that every once in a while, it would get something wrong - I'm not sure if that was my fault or the formula, or a slew of other things, but eventually I got tired of all that and realized that there was a beautifully dumb and genius solution. I have plenty of memory on my board, and I realized that downloading the moon phase for every day in the next 100 years would only take about 100k, so I just scraped 100 years of moon data from a website for moon phases, and formatted it into a list which I look at when I need the corresponding day. It's a stupid solution, but it saved time and effort, and is more surefire, so its smarter. 
 
-## *How do you set the clock with no buttons? 
+## *How do you set the clock with no buttons?* 
 
-This was kind of a difficult problem. Pet rock has no buttons (the reset button on the back directly interfaces with the hardware, you can't use it as a programmable button) so how was I going to set the clock? One answer is to use the trigger input, and listen for a series of audio pulses that could be a binary code communicating the current time - but how would I even enter this caliration mode? maybe listen for a bit on every start up for a "start clock settting" code? This solution started getting complicated, and my module is designed to receive eurorack voltage triggers, not listen to line level audio coming from a computer.
+This was kind of a difficult problem. Pet rock has no buttons (the reset button on the back directly interfaces with the hardware, you can't use it as a programmable button) so how was I going to set the clock? One answer is to use the trigger input, and listen for a series of audio pulses that could be a binary code communicating the current time - but how would I even enter this calibration mode? maybe listen for a bit on every start up for a "start clock settting" code? This solution started getting complicated, and my module is designed to receive eurorack voltage triggers, not listen to line level audio coming from a computer.
 
 I thought about including the current time in the source code somehow, but how would the user access/change this. You don't simply load source code onto the module, but rather a *binary* file, which isn't human readable or editable by normal means. Binary files are a mess of unreadable numbers - but, one thing you can pull out of them are words, or "strings" which is the programming term for a word. Words are stored as strings of numbers that refer to each letter in a row, so you can sift through the binary file and pick out a given word. Once you pick out this word, you can replace it with a different word, without effecting any other part of the binary file. So i created a code word, in this case "nanoplanktons" that was 13 letters long - and I replaced it with a sequence of numbers written as text. The numbers were as follows
 
@@ -51,7 +51,7 @@ This is normal, the official pico sdk reflects this in the [adafruit](https://gi
 
 ## RTC batteries
 
-I've had a lot of touchyness with RTC batteries. Note: they must be fully pushed in to the battery holder to work correctly, also I've had bad luck with cheap chinese batteries scrambling the clock. I think maybe it's also a good idea to wait a minute or two after installing a battery to test the module/turn it on, but that might be supersition (the thinking is similar to the main crystal, that the rtc crystal might need to stabilize on its own before being read, but I think realistically that probably happens in a fraction of a second, so this is probably wrong and based on vibes)
+I've had a lot of touchiness with RTC batteries. Note: they must be fully pushed in to the battery holder to work correctly, also I've had bad luck with cheap chinese batteries scrambling the clock. I think maybe it's also a good idea to wait a minute or two after installing a battery to test the module/turn it on, but that might be supersition (the thinking is similar to the main crystal, that the rtc crystal might need to stabilize on its own before being read, but I think realistically that probably happens in a fraction of a second, so this is probably wrong and based on vibes)
 
 ## C variable initializing
 
