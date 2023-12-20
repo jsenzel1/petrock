@@ -1,4 +1,27 @@
-# *!!! Open Source code and schematics coming soon, just need to clean it up to be a bit more publically readable !!!*
+# PET ROCK EURORACK MODULE 
+Pet Rock is a Eurorack module
+# [Pet Rock website](https://petrock.site/)
+
+
+> Pet Rock is a rogue-like rhythm generator which changes daily, with monthly modulations in style.
+> 
+> This 4hp Eurorack module generates a new rhythm every night at midnight that you have 24 hours to use. Pet Rock is like rhythm Wordle - everyone who owns the module gets the exact same rhythm. No internet connected needed.
+> 
+> Pet Rock has 2 independently clockable (gate in, gate out) 'A' and 'B' rhythms each day, so there's flexibility in how you use it/clock it. The ‘A’ and ‘B’ rhythms can be used together as one composite rhythm, split into two separate rhythms, etc.
+> 
+> Rhythm generation parameters change according to the real current moon phase. The overall "Mood" changes with every 30 day moon cycle to help keep things fresh. With each “Mood” change, Pet Rock switches between several custom algorithms to produce distinct styles.
+
+Pet Rock is sold at cost and under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) ([details here](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en)]
+
+
+for code info, see the firmware readme in the code folder 
+
+everything here is homebrew, duct taped, messed up, etc. - so
+if you see something messed up, it's probably indeed messed up, and not a secretely galaxy brained gambit. I do it for the loveeeeee babbyyyyyy (I don't make money from this project) so please know that I know stuff is messy, and I am eternally grateful to those wanting to help :) 
+
+
+
+
 
 ## Pet Rock technical details 
 (this doc is a work in progress, just threw together the most commonly asked questions, and some fun lessons I learned, will continue updating)

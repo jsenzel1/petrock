@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 3.13)
+
+include(pico_sdk_import.cmake)
+project(test_project C CXX ASM)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+
+pico_sdk_init()
+
+set(PICO_CXX_ENABLE_EXCEPTIONS,1)
+
+add_executable(test
+  jfunc.cpp
+  main.cpp
+  AlgoPlain.cpp
+  AlgoReich.cpp
+  AlgoSparse.cpp
+  AlgoVari.cpp
+  AlgoCulture.cpp 
+  AlgoOver.cpp
+  AlgoBlocks.cpp
+  AlgoWonk.cpp 
+  Clock.cpp
+)
+
+add_subdirectory(littlefs-lib)
+add_subdirectory(stdinit-lib)
+
+target_compile_definitions(test PRIVATE
+    #PICO_XOSC_STARTUP_DELAY_MULTIPLIER=128
+    # this can be smaller but needs to be tested on many pcbs to insure it works on all
+    #PICO_XOSC_STARTUP_DELAY_MULTIPLIER=158
+    PICO_XOSC_STARTUP_DELAY_MULTIPLIER=173
+    #PICO_STDIO_USB_CONNECT_WAIT_TIMEOUT_MS=5000
+    #SYS_CLK_KHZ=125000
+)
+
+pico_enable_stdio_usb(test 1)
+pico_enable_stdio_uart(test 0)
+
+pico_add_extra_outputs(test)
+target_link_libraries(test pico_stdlib hardware_i2c hardware_pwm hardware_flash littlefs-lib stdinit-lib)
