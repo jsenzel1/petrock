@@ -28,11 +28,14 @@ if you see something messed up, it's probably indeed messed up, and not a secret
 
 contact me at jsenzel1@gmail.com with any inquiries 
 
-# Design Elements of interest 
+# Design Elements of interest
+
+## *Why isn't the B side working?*
+If it is the New Moon the B side will not output a rhythym. Try again the next day please.
 
 ## *How does it keep track of real time?* 
 
-Pet Rock keeeps track of real time with a small real time clock, powered by a battery - similar to a wristwatch without a screeen. I use the pcf8523 because it is cheap, and I'm not that concerened with accuracy (I generally need to tell what day it is, drifting by minutes isn't a big deal) This component is always on, even when everything is powered off. It keeps track of the date and time. I designed the circuit around the adafruit breakout board for the pcf8523 
+Pet Rock keeeps track of real time with a small real time clock, powered by a battery - similar to a wristwatch without a screeen. I use the pcf8523 because it is cheap, and I'm not that concerned with accuracy (I generally need to tell what day it is, drifting by minutes isn't a big deal) This component is always on, even when everything is powered off. It keeps track of the date and time. I designed the circuit around the adafruit breakout board for the pcf8523 
 
 ## *How does it keep track of the moon phase?* 
 
